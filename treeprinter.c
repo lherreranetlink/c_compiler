@@ -4,14 +4,17 @@ static FILE* outFd;
 
 void printSyntaxTree(SyntaxTreeNode* initial)
 {
-    outFd = fopen("salida.xml", "w");
-    fprintf(outFd, "<PROGRAMA>\n");
+    outFd = fopen("salida.txt", "w");
+    if (initial != NULL)
+    {
+        fprintf(outFd, "<PROGRAMA>\n");
 
-    SyntaxTreeNode* aux;
-    for (aux = initial; aux != NULL; aux = aux->next)
-        printStatemment(aux);
+        SyntaxTreeNode* aux;
+        for (aux = initial; aux != NULL; aux = aux->next)
+            printStatemment(aux);
 
-    fprintf(outFd, "</PROGRAMA>\n");
+        fprintf(outFd, "</PROGRAMA>\n");
+    }
     fclose(outFd);
 }
 
@@ -131,8 +134,10 @@ void printRelationalExpression(SyntaxTreeNode* relationalExpression)
         fprintf(outFd, "<EXPRESION value=\"&lt;\">\n");
     else if (strcmp(relOperator, "<=") == 0)
         fprintf(outFd, "<EXPRESION value=\"&lt;=\">\n");
+    else if (strcmp(relOperator, ">") == 0)
+        fprintf(outFd, "<EXPRESION value=\"&gt;\">\n");
     else
-        fprintf(outFd, "<EXPRESION value =\"%s\">\n", relOperator);
+        fprintf(outFd, "<EXPRESION value =\"&gt;=\">\n");
 
     printExpression(relationalExpression->operand1);
     printExpression(relationalExpression->operand2);
