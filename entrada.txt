@@ -1,0 +1,17 @@
+b = 2;
+
+wL = 29;
+
+o82e = 8;
+
+F = 0;
+xtMx = 3;
+
+HjF = 7;
+
+print ((HjF * F) * HjF);
+
+print (HjF);
+print ((- HjF * + (5 + 60)) * (0 - 4));
+
+print (11);
