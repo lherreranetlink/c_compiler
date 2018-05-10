@@ -153,7 +153,7 @@ SyntaxTreeNode* factor()
     case NEGATION_OPERATOR:
         match(NEGATION_OPERATOR);
         temp->ruleType = NEGATION_OPERATION_NODE;
-        temp->expression = expression();
+        temp->expression = factor();
     break;
     case LEFT_PARENTHESIS:
         match(LEFT_PARENTHESIS);
@@ -164,7 +164,7 @@ SyntaxTreeNode* factor()
         temp->ruleType = UNARY_OPERATION_NODE;
         temp->sign = currentToken;
         match(ADD_OPERATOR);
-        temp->expression = expression();
+        temp->expression = factor();
         break;
     case INTEGER:
         temp->ruleType = INTEGER_NODE;
