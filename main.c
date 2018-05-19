@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "parser.h"
-#include "treeprinter.h"
+#include "semantic_analyzer.h"
 
 int main()
 {
@@ -13,6 +13,6 @@ int main()
         exit(1);
     }
     SyntaxTreeNode* syntaxTree = parse(fd);
-    printSyntaxTree(syntaxTree);
+    analyzeSemantics(syntaxTree);
     return 0;
 }
