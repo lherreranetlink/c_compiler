@@ -3,11 +3,12 @@
 #include <stdio.h>
 #include "token.h"
 #include "parser.h"
+#include "symbol_table.h"
 #include "semantic_type.h"
 #include "semantic_analyzer.h"
 
-void analyzeSemantics(SyntaxTreeNode* treeRoot);
-void calculateTypeForStatemment(SyntaxTreeNode* statement);
+void analyzeSemantics(SyntaxTreeNode** treeRoot);
+void calculateTypeForStatement(SyntaxTreeNode* statement);
 void calculateTypeForRelationalExpression(SyntaxTreeNode* relationalExpression);
 void calculateTypeForBlock(SyntaxTreeNode* block);
 void calculateTypeForExpression(SyntaxTreeNode* expression);

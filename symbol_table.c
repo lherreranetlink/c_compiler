@@ -2,18 +2,21 @@
 
 void insertNode(SymbolTableNode** tableHeader, SemanticType type, Token* identifier)
 {
+    SymbolTableNode* symbol = (SymbolTableNode*) malloc(sizeof(SymbolTableNode));
+    symbol->identifier = identifier;
+    symbol->type = type;
+    symbol->next= NULL;
+
     if (*tableHeader != NULL)
     {
         SymbolTableNode* aux;
         for (aux = *tableHeader; aux->next != NULL; aux = aux->next);
 
-        SymbolTableNode* symbol = (SymbolTableNode*) malloc(sizeof(SymbolTableNode));
-        symbol->identifier = identifier;
-        symbol->type = type;
-        symbol->next= NULL;
-
         aux->next = symbol;
+
     }
+    else
+        *tableHeader = symbol;
 }
 
 int existsNode(SymbolTableNode** tableHeader, char* identifier)
@@ -36,4 +39,15 @@ SemanticType getType(SymbolTableNode** tableHeader, char* identifier)
             return aux->type;
 
     return ERROR_SYMBOL;
+}
+
+void updateType(SymbolTableNode** tableHeader, SemanticType type, char* key)
+{
+    SymbolTableNode* aux;
+    for (aux = *tableHeader; aux != NULL; aux = aux->next)
+        if (strcmp(key, aux->identifier->symbol) == 0)
+        {
+            aux->type = type;
+            break;
+        }
 }

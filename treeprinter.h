@@ -6,8 +6,8 @@
 
 void printSyntaxTree(SyntaxTreeNode* initial);
 void printStatement(SyntaxTreeNode* statement);
-void printRelationalExpression(SyntaxTreeNode* relationalExpression);
-void printBlock(SyntaxTreeNode* block);
 void printExpression(SyntaxTreeNode* expression);
+void printBlock(SyntaxTreeNode* block);
+void printRelationalExpression(SyntaxTreeNode* relationalExpression);
 
 #endif // TREEPRINTER_H_INCLUDED
