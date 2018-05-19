@@ -94,3 +94,61 @@
 1525923894 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Arbol_Sintactico/treeprinter.c
 	"treeprinter.h"
 
+1526745568 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Semantico/lex.c
+	"lex.h"
+
+1526745568 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Semantico/lex.h
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"token.h"
+
+1526745568 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Semantico/token.h
+
+1526753113 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Semantico/main.c
+	<stdio.h>
+	<stdlib.h>
+	"parser.h"
+	"semantic_analyzer.h"
+
+1526745568 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Semantico/parser.h
+	<stdio.h>
+	<stdlib.h>
+	"rules.h"
+	"token.h"
+	"lex.h"
+
+1526753859 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Semantico/rules.h
+	"token.h"
+	"semantic_type.h"
+
+1526753132 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Semantico/treeprinter.h
+	"rules.h"
+	<stdio.h>
+	<string.h>
+
+1526745568 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Semantico/parser.c
+	"parser.h"
+
+1526751406 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Semantico/symbol_table.c
+	"symbol_table.h"
+
+1526750540 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Semantico/symbol_table.h
+	<stdlib.h>
+	"semantic_type.h"
+	"token.h"
+	"string.h"
+
+1526746724 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Semantico/semantic_type.h
+
+1526753161 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Semantico/treeprinter.c
+	"treeprinter.h"
+
+1526754233 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Semantico/semantic_analyzer.h
+	<stdio.h>
+	"token.h"
+	"parser.h"
+	"semantic_type.h"
+	"semantic_analyzer.h"
+

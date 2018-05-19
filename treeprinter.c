@@ -11,14 +11,14 @@ void printSyntaxTree(SyntaxTreeNode* initial)
 
         SyntaxTreeNode* aux;
         for (aux = initial; aux != NULL; aux = aux->next)
-            printStatemment(aux);
+            printStatement(aux);
 
         fprintf(outFd, "</PROGRAMA>\n");
     }
     fclose(outFd);
 }
 
-void printStatemment(SyntaxTreeNode* statement)
+void printStatement(SyntaxTreeNode* statement)
 {
     int statementType = statement->ruleType;
     switch(statementType)
@@ -149,5 +149,5 @@ void printBlock(SyntaxTreeNode* block)
 {
     SyntaxTreeNode* aux;
     for (aux = block; aux != NULL; aux = aux->next)
-        printStatemment(aux);
+        printStatement(aux);
 }
