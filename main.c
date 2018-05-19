@@ -13,6 +13,6 @@ int main()
         exit(1);
     }
     SyntaxTreeNode* syntaxTree = parse(fd);
-    analyzeSemantics(syntaxTree);
+    analyzeSemantics(&syntaxTree);
     return 0;
 }
