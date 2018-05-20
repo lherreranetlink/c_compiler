@@ -19,6 +19,7 @@ void analyzeSemantics(SyntaxTreeNode** treeRoot)
         if (errorExists)
             semantic_error();
     }
+
     fprintf(outFd, "1");
     fclose(outFd);
 }
@@ -34,7 +35,8 @@ void calculateTypeForStatement(SyntaxTreeNode* statement)
         calculateTypeForBlock(statement->elsePart);
 
         statement->semanticType = ((statement->expression->semanticType != ERROR_SYMBOL)
-                                   && statement->ifPart->semanticType == VOID_SYMBOL && statement->elsePart->semanticType == VOID_SYMBOL)
+                                   && (statement->ifPart == NULL || statement->ifPart->semanticType == VOID_SYMBOL)
+                                   && (statement->elsePart == NULL || statement->elsePart->semanticType == VOID_SYMBOL))
                                   ? VOID_SYMBOL : ERROR_SYMBOL;
         break;
     case WHILE_STATEMENT_NODE:
@@ -105,16 +107,19 @@ void calculateTypeForExpression(SyntaxTreeNode* expression)
 
 void calculateTypeForBlock(SyntaxTreeNode* block)
 {
-    int errorExists = 0;
-    SyntaxTreeNode* aux;
-    for (aux = block; aux != NULL; aux = aux->next)
+    if (block != NULL)
     {
-        calculateTypeForStatement(aux);
-        if (aux->semanticType == ERROR_SYMBOL)
-            errorExists = 1;
-    }
+        int errorExists = 0;
+        SyntaxTreeNode* aux;
+        for (aux = block; aux != NULL; aux = aux->next)
+        {
+            calculateTypeForStatement(aux);
+            if (aux->semanticType == ERROR_SYMBOL)
+                errorExists = 1;
+        }
 
-    block->semanticType = (!errorExists) ? VOID_SYMBOL : ERROR_SYMBOL;
+        block->semanticType = (!errorExists) ? VOID_SYMBOL : ERROR_SYMBOL;
+    }
 
 }
 
