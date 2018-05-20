@@ -11,7 +11,6 @@ void analyzeSemantics(SyntaxTreeNode** treeRoot);
 void calculateTypeForStatement(SyntaxTreeNode* statement);
 void calculateTypeForRelationalExpression(SyntaxTreeNode* relationalExpression);
 void calculateTypeForBlock(SyntaxTreeNode* block);
-void calculateTypeForExpression(SyntaxTreeNode* expression);
 void semantic_error();
 
 #endif // SEMANTIC_ANALYZER_H_INCLUDED
