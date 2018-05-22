@@ -156,10 +156,12 @@
 1526780445 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Semantico/semantic_analyzer.c
 	"semantic_analyzer.h"
 
-1526956830 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/asm_generator.c
+1526993468 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/asm_generator.c
 	"asm_generator.h"
 
-1526956669 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/asm_generator.h
+1526989374 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/asm_generator.h
+	<stdio.h>
+	<string.h>
 	"semantic_analyzer.h"
 
 1526955799 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/semantic_analyzer.h

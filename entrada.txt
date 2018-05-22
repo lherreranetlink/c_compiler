@@ -1,17 +1,31 @@
-b = 2;
+So3a = 72;
 
-wL = 29;
+R = 02;
+e = 52;
+l508 = 1;
+Va = 5;
+xg = 3;
+if (6 * - xg > 6 * 88){
+	Rq = 9;
 
-o82e = 8;
+	Jj = 3;
 
-F = 0;
-xtMx = 3;
+	while (Rq < Jj){
+		B70K = (Jj - Rq) / 10 + 1;
 
-HjF = 7;
+		print (Rq);
 
-print ((HjF * F) * HjF);
+		Rq = Rq + B70K;
 
-print (HjF);
-print ((- HjF * + (5 + 60)) * (0 - 4));
+		Y8 = 12;
 
-print (11);
+	}	
+
+
+	print (38 + Y8);
+}
+else
+	wg7 = 98;
+
+
+print (e);
