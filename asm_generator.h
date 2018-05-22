@@ -9,6 +9,8 @@ void generateDependencies();
 void generateDataSection();
 void generateStatementCode(SyntaxTreeNode* statement);
 void generateExpressionCode(SyntaxTreeNode* expression);
+void generateBlockCode(SyntaxTreeNode* block);
+void setConditionString(char* relationalOp, char* symbol);
 
 
 #endif // ASM_GENERATOR_H_INCLUDED

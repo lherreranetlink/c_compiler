@@ -13,9 +13,12 @@ void generate_asm(SyntaxTreeNode** treeRoot, SymbolTableNode** symbolTable)
     {
         generateDataSection();
         fprintf(outFd, ".code\n");
+        fprintf(outFd, "begin:\n");
         SyntaxTreeNode* aux;
         for (aux = *treeRoot; aux != NULL; aux = aux->next)
             generateStatementCode(aux);
+        fprintf(outFd, "exit\n");
+        fprintf(outFd, "end begin\n");
     }
     fclose(outFd);
 }
@@ -28,7 +31,7 @@ void generateDependencies()
     fprintf(outFd, "include \\masm32\\macros\\macros.asm\n");
     fprintf(outFd, "include \\masm32\\include\\masm32.inc\n");
     fprintf(outFd, "include \\masm32\\include\\kernel32.inc\n");
-    fprintf(outFd, "include \\masm32\\macros\\macros.asm");
+    fprintf(outFd, "include \\masm32\\macros\\macros.asm\n");
     fprintf(outFd, "includelib \\masm32\\lib\\masm32.lib\n");
     fprintf(outFd, "includelib \\masm32\\lib\\kernel32.lib\n\n");
 }
@@ -48,34 +51,38 @@ void generateStatementCode(SyntaxTreeNode* statement)
     switch(statementType)
     {
     case IF_STATEMENT_NODE:
+    {
         int elsePartLabel = genericLabelCount++, endIfLabel = genericLabelCount++;
         generateExpressionCode(statement->expression);
         fprintf(outFd, "pop eax\n");
         fprintf(outFd, "cmp eax, 1\n");
         fprintf(outFd, "jne L%d\n", elsePartLabel);
-        //generateBlockCode(expression->ifPart);
+        generateBlockCode(statement->ifPart);
         fprintf(outFd, "jmp E%d\n", endIfLabel);
         fprintf(outFd, "L%d:\n", elsePartLabel);
-        //generateBlockCode(expression->elsePart);
+        generateBlockCode(statement->elsePart);
         fprintf(outFd, "E%d:\n", endIfLabel);
-        break;
+    }
+    break;
     case WHILE_STATEMENT_NODE:
+    {
         int beginWhileLabel = genericLabelCount++, endWhileLabel = genericLabelCount++;
         fprintf(outFd, "B%d:\n", beginWhileLabel);
         generateExpressionCode(statement->expression);
         fprintf(outFd, "pop eax \n");
         fprintf(outFd, "cmp eax, 1\n");
         fprintf(outFd, "jne E%d\n", endWhileLabel);
-        //generateBlockCode(statement->block);
+        generateBlockCode(statement->blockStatements);
         fprintf(outFd, "jmp B%d\n", beginWhileLabel);
         fprintf(outFd, "E%d:\n", endWhileLabel);
-        break;
+    }
+    break;
     case PRINT_CONST_STRING_NODE:
         //TODO: Generate code to const string node
         break;
     case PRINT_EXPRESSION_STATEMENT_NODE:
         generateExpressionCode(statement->expression);
-        fprintf(outFd, "pop eax\n print str$(eax), 13, 10\n");
+        fprintf(outFd, "pop eax\nprint str$(eax), 13, 10\n");
         break;
     case ASSIGNMENT_STATEMENT_NODE:
         generateExpressionCode(statement->expression);
@@ -93,18 +100,19 @@ void generateExpressionCode(SyntaxTreeNode* expression)
         generateExpressionCode(expression->operand1);
         generateExpressionCode(expression->operand2);
         if (strcmp(expression->sign->symbol, "+") == 0)
-            fprintf(outFd, "pop ebx\n pop eax\n add eax, ebx\n push eax\n");
+            fprintf(outFd, "pop ebx\npop eax\nadd eax, ebx\npush eax\n");
         else if(strcmp(expression->sign->symbol, "-") == 0)
-            fprintf(outFd, "pop ebx\n pop eax\n sub eax, ebx\n push eax\n");
+            fprintf(outFd, "pop ebx\npop eax\nsub eax, ebx\npush eax\n");
         else if(strcmp(expression->sign->symbol, "*") == 0)
-            fprintf(outFd, "pop ebx\n pop eax\n mul ebx\n push eax\n");
+            fprintf(outFd, "pop ebx\npop eax\nmul ebx\npush eax\n");
         else if(strcmp(expression->sign->symbol, "/") == 0)
-            fprintf(outFd, "pop ebx\n pop eax\n div ebx\n push eax\n");
+            fprintf(outFd, "pop ebx\npop eax\ndiv ebx\npush eax\n");
         break;
     case UNARY_OPERATION_NODE:
         generateExpressionCode(expression->expression);
-        if (strcmp(expression->sign->symbol, "-"))
-            fprintf(outFd, "pop eax\n mul -1\n push eax\n");
+        if (strcmp(expression->sign->symbol, "-") == 0)
+            fprintf(outFd, "pop eax\nimul -1\npush eax\n");
+        break;
     case NEGATION_OPERATION_NODE:
         generateExpressionCode(expression->expression);
         fprintf(outFd, "pop eax\n not eax\n push eax\n");
@@ -115,28 +123,38 @@ void generateExpressionCode(SyntaxTreeNode* expression)
         generateExpressionCode(expression->operand2);
         char relationalOp[BUFSIZ];
         setConditionString(expression->sign->symbol, relationalOp);
-        fprintf(outFd, "pop ebx\n pop eax\n cmp eax, ebx\n");
-        fprintf(outFd, "%s T%d\n", relationalOp, trueLabelCount++);
+        fprintf(outFd, "pop ebx\npop eax\ncmp eax, ebx\n");
+        fprintf(outFd, "%s T%d\n", relationalOp, trueLabelCount);
         fprintf(outFd, "push 0\n");
-        fprintf(outFd, "jmp E%d\n", endLabelCount++);
-        fprintf(outFd, "T%d:\n", trueLabelCount);
+        fprintf(outFd, "jmp E%d\n", endLabelCount);
+        fprintf(outFd, "T%d:\n", trueLabelCount++);
         fprintf(outFd, "push 1\n");
-        fprintf(outFd, "E%d:\n", endLabelCount);
+        fprintf(outFd, "E%d:\n", endLabelCount++);
         break;
     case AND_OPERATION_NODE:
         generateExpressionCode(expression->operand1);
         generateExpressionCode(expression->operand2);
         if (strcmp(expression->sign->symbol, "&&") == 0)
-            fprintf(outFd, "pop ebx\n pop eax\n and eax, ebx\n push eax\n");
+            fprintf(outFd, "pop ebx\npop eax\nand eax, ebx\npush eax\n");
         else
-            fprintf(outFd, "pop ebx\n pop eax\n or eax, ebx\n push eax\n");
+            fprintf(outFd, "pop ebx\npop eax\nor eax, ebx\npush eax\n");
         break;
     case IDENTIFIER_NODE:
         fprintf(outFd, "push _%s\n", expression->identfier->symbol);
+        break;
     case INTEGER_NODE:
+        fprintf(outFd, "push %s\n", expression->integer->symbol);
+        break;
     case REAL_NUMBER_NODE:
         fprintf(outFd, "push %s\n", expression->realNumber->symbol);
     }
+}
+
+void generateBlockCode(SyntaxTreeNode* block)
+{
+    SyntaxTreeNode* aux;
+    for (aux = block; aux != NULL; aux = aux->next)
+        generateStatementCode(aux);
 }
 
 void setConditionString(char* relationalOp, char* symbol)
