@@ -7,9 +7,9 @@
 #include "semantic_type.h"
 #include "semantic_analyzer.h"
 
-void analyzeSemantics(SyntaxTreeNode** treeRoot);
+void analyzeSemantics(SyntaxTreeNode** treeRoot, SymbolTableNode** symbolTableHeader);
 void calculateTypeForStatement(SyntaxTreeNode* statement);
-void calculateTypeForRelationalExpression(SyntaxTreeNode* relationalExpression);
+void calculateTypeForExpression(SyntaxTreeNode* expression);
 void calculateTypeForBlock(SyntaxTreeNode* block);
 void semantic_error();
 

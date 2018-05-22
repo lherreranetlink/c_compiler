@@ -156,3 +156,73 @@
 1526780445 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Semantico/semantic_analyzer.c
 	"semantic_analyzer.h"
 
+1526956830 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/asm_generator.c
+	"asm_generator.h"
+
+1526956669 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/asm_generator.h
+	"semantic_analyzer.h"
+
+1526955799 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/semantic_analyzer.h
+	<stdio.h>
+	"token.h"
+	"parser.h"
+	"symbol_table.h"
+	"semantic_type.h"
+	"semantic_analyzer.h"
+
+1526792553 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/token.h
+
+1526792553 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/parser.h
+	<stdio.h>
+	<stdlib.h>
+	"rules.h"
+	"token.h"
+	"lex.h"
+
+1526792553 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/rules.h
+	"token.h"
+	"semantic_type.h"
+
+1526792553 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/semantic_type.h
+
+1526792553 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/lex.h
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"token.h"
+
+1526792553 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/symbol_table.h
+	<stdlib.h>
+	"semantic_type.h"
+	"token.h"
+	"string.h"
+
+1526792553 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/lex.c
+	"lex.h"
+
+1526956546 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/main.c
+	<stdio.h>
+	<stdlib.h>
+	"parser.h"
+	"symbol_table.h"
+	"semantic_analyzer.h"
+	"asm_generator.h"
+
+1526792553 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/parser.c
+	"parser.h"
+
+1526955938 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/semantic_analyzer.c
+	"semantic_analyzer.h"
+
+1526792553 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/symbol_table.c
+	"symbol_table.h"
+
+1526792553 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/treeprinter.c
+	"treeprinter.h"
+
+1526792553 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/treeprinter.h
+	"rules.h"
+	<stdio.h>
+	<string.h>
+

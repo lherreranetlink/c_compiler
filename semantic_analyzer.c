@@ -1,11 +1,9 @@
 #include "semantic_analyzer.h"
 
-static FILE* outFd;
 static SymbolTableNode* symbolTableHeader;
 
-void analyzeSemantics(SyntaxTreeNode** treeRoot)
+void analyzeSemantics(SyntaxTreeNode** treeRoot, SymbolTableNode** symbolTable)
 {
-    outFd = fopen("salida.txt", "w");
     if (*treeRoot != NULL)
     {
         int errorExists = 0;
@@ -18,10 +16,9 @@ void analyzeSemantics(SyntaxTreeNode** treeRoot)
         }
         if (errorExists)
             semantic_error();
-    }
 
-    fprintf(outFd, "1");
-    fclose(outFd);
+        *symbolTable = symbolTableHeader;
+    }
 }
 
 void calculateTypeForStatement(SyntaxTreeNode* statement)
@@ -125,7 +122,6 @@ void calculateTypeForBlock(SyntaxTreeNode* block)
 
 void semantic_error()
 {
-    fprintf(outFd, "0");
-    fclose(outFd);
+    fprintf(stderr, "semantic error: incompatible data types\n");
     exit(1);
 }

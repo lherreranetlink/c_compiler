@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "parser.h"
+#include "symbol_table.h"
 #include "semantic_analyzer.h"
+#include "asm_generator.h"
 
 int main()
 {
@@ -13,6 +15,8 @@ int main()
         exit(1);
     }
     SyntaxTreeNode* syntaxTree = parse(fd);
-    analyzeSemantics(&syntaxTree);
+    SymbolTableNode* symbolTable;
+    analyzeSemantics(&syntaxTree, &symbolTable);
+    generate_asm(&syntaxTree, &symbolTable);
     return 0;
 }
