@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="asm_generator.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="asm_generator.h" />
 		<Unit filename="lex.c">
 			<Option compilerVar="CC" />
 		</Unit>
