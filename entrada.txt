@@ -10,16 +10,38 @@ if (6 * - xg > 6 * 88){
 
 	Jj = 3;
 
-	while (Rq < Jj){
+
+	(Rq < Jj){
 		B70K = (Jj - Rq) / 10 + 1;
 
-		print (Rq);
+		print (Rq+2);
 
-		Rq = Rq + B70K;
+		Rq = Rq + B70K - 4;
 
 		Y8 = 12;
+	}
 
-	}	
+	if (R)
+		while (R)
+			if (Va) {
+				while (Rq < Jj){
+					B70K = (Jj - Rq) / 10 + 1;
+
+					print (Rq+2);
+
+					Rq = Rq + B70K - 4;
+
+					Y8 = 12;
+
+				}				
+			}
+	else
+		if (23)
+			if (R)
+				while(1)
+					print(R);
+
+	x = 43 - 10 * (R + l508);
 
 
 	print (38 + Y8);

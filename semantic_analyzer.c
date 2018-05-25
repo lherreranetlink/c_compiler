@@ -41,7 +41,8 @@ void calculateTypeForStatement(SyntaxTreeNode* statement)
         calculateTypeForBlock(statement->blockStatements);
 
         statement->semanticType = ((statement->expression->semanticType != ERROR_SYMBOL)
-                                   && statement->blockStatements->semanticType == VOID_SYMBOL) ? VOID_SYMBOL : ERROR_SYMBOL;
+                                   && (statement->blockStatements == NULL || statement->blockStatements->semanticType == VOID_SYMBOL))
+                                   ? VOID_SYMBOL : ERROR_SYMBOL;
         break;
     case PRINT_CONST_STRING_NODE:
         //TODO: print const string node

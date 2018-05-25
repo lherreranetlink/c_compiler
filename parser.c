@@ -59,7 +59,7 @@ SyntaxTreeNode* singleStatement()
         statement = assignment();
         break;
     default:
-        return NULL;
+        error();
     }
     return statement;
 }
