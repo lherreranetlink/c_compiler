@@ -123,6 +123,6 @@ void calculateTypeForBlock(SyntaxTreeNode* block)
 
 void semantic_error()
 {
-    fprintf(stderr, "semantic error: incompatible data types\n");
+    fprintf(stderr, "semantic error\n");
     exit(1);
 }
