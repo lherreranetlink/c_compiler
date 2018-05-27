@@ -1,12 +1,18 @@
 #ifndef TREE_NODE_H_INCLUDED
 #define TREE_NODE_H_INCLUDED
 #include "token.h"
+#include "rules.h"
 #include "grammar_attributes.h"
 
 typedef struct SyntaxTreeNode
 {
     RuleType ruleType;
     SemanticType semanticType;
+    union
+    {
+        int integerVal;
+        float floatVal;
+    }value;
 
     union
     {
