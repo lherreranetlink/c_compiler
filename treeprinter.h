@@ -1,6 +1,7 @@
 #ifndef TREEPRINTER_H_INCLUDED
 #define TREEPRINTER_H_INCLUDED
 #include "rules.h"
+#include "tree_node.h"
 #include <stdio.h>
 #include <string.h>
 

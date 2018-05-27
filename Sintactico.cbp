@@ -35,6 +35,7 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="asm_generator.h" />
+		<Unit filename="grammar_attributes.h" />
 		<Unit filename="lex.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -51,12 +52,12 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="semantic_analyzer.h" />
-		<Unit filename="semantic_type.h" />
 		<Unit filename="symbol_table.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="symbol_table.h" />
 		<Unit filename="token.h" />
+		<Unit filename="tree_node.h" />
 		<Unit filename="treeprinter.c">
 			<Option compilerVar="CC" />
 		</Unit>

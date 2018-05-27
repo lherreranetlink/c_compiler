@@ -12,5 +12,6 @@ void calculateTypeForStatement(SyntaxTreeNode* statement);
 void calculateTypeForExpression(SyntaxTreeNode* expression);
 void calculateTypeForBlock(SyntaxTreeNode* block);
 void semantic_error();
+SemanticType getType(SemanticType type1, SemanticType type2);
 
 #endif // SEMANTIC_ANALYZER_H_INCLUDED

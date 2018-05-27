@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "rules.h"
+#include "tree_node.h"
 #include "token.h"
 #include "lex.h"
 
