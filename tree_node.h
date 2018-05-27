@@ -7,6 +7,7 @@ typedef struct SyntaxTreeNode
 {
     RuleType ruleType;
     SemanticType semanticType;
+
     union
     {
         int intVal;
