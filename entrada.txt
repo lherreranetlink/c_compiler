@@ -11,7 +11,7 @@ if (6 * - xg > 6 * 88){
 	Jj = 3;
 
 
-	(Rq < Jj){
+	if (Rq < Jj){
 		B70K = (Jj - Rq) / 10 + 1;
 
 		print (Rq+2);

@@ -4,7 +4,7 @@
 #include "token.h"
 #include "parser.h"
 #include "symbol_table.h"
-#include "semantic_type.h"
+#include "grammar_attributes.h"
 #include "semantic_analyzer.h"
 
 void analyzeSemantics(SyntaxTreeNode** treeRoot, SymbolTableNode** symbolTableHeader);

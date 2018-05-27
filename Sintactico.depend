@@ -156,15 +156,15 @@
 1526780445 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Semantico/semantic_analyzer.c
 	"semantic_analyzer.h"
 
-1526993468 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/asm_generator.c
+1527357185 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/asm_generator.c
 	"asm_generator.h"
 
-1526989374 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/asm_generator.h
+1527357185 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/asm_generator.h
 	<stdio.h>
 	<string.h>
 	"semantic_analyzer.h"
 
-1526955799 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/semantic_analyzer.h
+1527357185 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/semantic_analyzer.h
 	<stdio.h>
 	"token.h"
 	"parser.h"
@@ -181,9 +181,9 @@
 	"token.h"
 	"lex.h"
 
-1526792553 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/rules.h
+1527385295 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/rules.h
 	"token.h"
-	"semantic_type.h"
+	"grammar_attributes.h"
 
 1526792553 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/semantic_type.h
 
@@ -194,16 +194,16 @@
 	<string.h>
 	"token.h"
 
-1526792553 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/symbol_table.h
+1527385303 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/symbol_table.h
 	<stdlib.h>
-	"semantic_type.h"
+	"grammar_attributes.h"
 	"token.h"
 	"string.h"
 
 1526792553 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/lex.c
 	"lex.h"
 
-1526956546 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/main.c
+1527357185 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/main.c
 	<stdio.h>
 	<stdlib.h>
 	"parser.h"
@@ -211,10 +211,10 @@
 	"semantic_analyzer.h"
 	"asm_generator.h"
 
-1527207952 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/parser.c
+1527357185 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/parser.c
 	"parser.h"
 
-1527207052 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/semantic_analyzer.c
+1527357185 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/semantic_analyzer.c
 	"semantic_analyzer.h"
 
 1526792553 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/symbol_table.c
@@ -227,4 +227,6 @@
 	"rules.h"
 	<stdio.h>
 	<string.h>
+
+1526792553 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/Generacion_Codigo/grammar_attributes.h
 

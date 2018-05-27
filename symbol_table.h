@@ -1,7 +1,7 @@
 #ifndef SYMBOL_TABLE_H_INCLUDED
 #define SYMBOL_TABLE_H_INCLUDED
 #include <stdlib.h>
-#include "semantic_type.h"
+#include "grammar_attributes.h"
 #include "token.h"
 #include "string.h"
 
