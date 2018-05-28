@@ -35,6 +35,12 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="asm_generator.h" />
+<<<<<<< HEAD
+=======
+		<Unit filename="grammar_attributes.c">
+			<Option compilerVar="CC" />
+		</Unit>
+>>>>>>> WIP: cast integer and float values
 		<Unit filename="grammar_attributes.h" />
 		<Unit filename="lex.c">
 			<Option compilerVar="CC" />
