@@ -2,7 +2,7 @@
 #define SEMANTIC_TYPE_H_INCLUDED
 #include <stdio.h>
 
-typedef enum {INTEGER_SYMBOL, REAL_SYMBOL, BOOLEAN_SYMBOL, VOID_SYMBOL, ERROR_SYMBOL} SemanticType;
+typedef enum {INTEGER_SYMBOL, REAL_SYMBOL, VOID_SYMBOL, ERROR_SYMBOL} SemanticType;
 
 SemanticType getNumericType(SemanticType t1, SemanticType t2);
 

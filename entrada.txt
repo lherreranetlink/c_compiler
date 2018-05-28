@@ -1,10 +1,6 @@
-<<<<<<< HEAD
 int a, b, c, f, g;
 
 So3a = 72 + 3.5 + 2;
-=======
-So3a = 72.2 + 3.5 + 2.8;
->>>>>>> WIP: cast integer and float values
 
 b = 3 > 4 < 7.0;
 
@@ -54,3 +50,6 @@ else
 	wg7 = 98;
 
 print (e);
+So3a = 7.2 + 3.5 + 2.8;
+
+b = 3 > 4 < So3a;

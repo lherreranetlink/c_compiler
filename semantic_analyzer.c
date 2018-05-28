@@ -130,17 +130,17 @@ void calculateAttributesForExpression(SyntaxTreeNode* expression)
             castValues(expression->operand1, expression->operand2);
             if (expression->semanticType == INTEGER_SYMBOL)
             {
-                expression->value.booleanVal = (strcmp(expression->sign->symbol, EQ_COMPARISON_SIGN) == 0)
+                expression->value.integerVal = (strcmp(expression->sign->symbol, EQ_COMPARISON_SIGN) == 0)
                                                ? expression->operand1->value.integerVal == expression->operand2->value.integerVal
-                                               : expression->operand1->value.integerVal == expression->operand2->value.integerVal;
+                                               : expression->operand1->value.integerVal != expression->operand2->value.integerVal;
             }
             else
             {
-                expression->value.booleanVal = (strcmp(expression->sign->symbol, NE_COMPARISON_SIGN) == 0)
-                                               ? expression->operand1->value.floatVal != expression->operand2->value.floatVal
+                expression->value.integerVal = (strcmp(expression->sign->symbol, NE_COMPARISON_SIGN) == 0)
+                                               ? expression->operand1->value.floatVal == expression->operand2->value.floatVal
                                                : expression->operand1->value.floatVal != expression->operand2->value.floatVal;
             }
-            expression->semanticType = BOOLEAN_SYMBOL;
+            expression->semanticType = INTEGER_SYMBOL;
         }
     }
     break;
@@ -156,37 +156,26 @@ void calculateAttributesForExpression(SyntaxTreeNode* expression)
             if (tempType == INTEGER_SYMBOL)
             {
                 if (strcmp(expression->sign->symbol, LT_SIGN) == 0)
-                    expression->value.booleanVal = expression->operand1->value.integerVal < expression->operand2->value.integerVal;
+                    expression->value.integerVal = expression->operand1->value.integerVal < expression->operand2->value.integerVal;
                 else if (strcmp(expression->sign->symbol, LTE_SIGN) == 0)
-                    expression->value.booleanVal = expression->operand1->value.integerVal <= expression->operand2->value.integerVal;
+                    expression->value.integerVal = expression->operand1->value.integerVal <= expression->operand2->value.integerVal;
                 else if (strcmp(expression->sign->symbol, GT_SIGN) == 0)
-                    expression->value.booleanVal = expression->operand1->value.integerVal > expression->operand2->value.integerVal;
+                    expression->value.integerVal = expression->operand1->value.integerVal > expression->operand2->value.integerVal;
                 else if (strcmp(expression->sign->symbol, GTE_SIGN) == 0)
-                    expression->value.booleanVal = expression->operand1->value.integerVal >= expression->operand2->value.integerVal;
+                    expression->value.integerVal = expression->operand1->value.integerVal >= expression->operand2->value.integerVal;
             }
             else if (tempType == REAL_SYMBOL)
             {
                 if (strcmp(expression->sign->symbol, LT_SIGN) == 0)
-                    expression->value.booleanVal = expression->operand1->value.floatVal < expression->operand2->value.floatVal;
+                    expression->value.integerVal = expression->operand1->value.floatVal < expression->operand2->value.floatVal;
                 else if (strcmp(expression->sign->symbol, LTE_SIGN) == 0)
-                    expression->value.booleanVal = expression->operand1->value.floatVal <= expression->operand2->value.floatVal;
+                    expression->value.integerVal = expression->operand1->value.floatVal <= expression->operand2->value.floatVal;
                 else if (strcmp(expression->sign->symbol, GT_SIGN) == 0)
-                    expression->value.booleanVal = expression->operand1->value.floatVal > expression->operand2->value.floatVal;
+                    expression->value.integerVal = expression->operand1->value.floatVal > expression->operand2->value.floatVal;
                 else if (strcmp(expression->sign->symbol, GTE_SIGN) == 0)
-                    expression->value.booleanVal = expression->operand1->value.floatVal >= expression->operand2->value.floatVal;
+                    expression->value.integerVal = expression->operand1->value.floatVal >= expression->operand2->value.floatVal;
             }
-            else if (tempType == BOOLEAN_SYMBOL)
-            {
-                if (strcmp(expression->sign->symbol, LT_SIGN) == 0)
-                    expression->value.booleanVal = expression->operand1->value.booleanVal < expression->operand2->value.booleanVal;
-                else if (strcmp(expression->sign->symbol, LTE_SIGN) == 0)
-                    expression->value.booleanVal = expression->operand1->value.booleanVal <= expression->operand2->value.booleanVal;
-                else if (strcmp(expression->sign->symbol, GT_SIGN) == 0)
-                    expression->value.booleanVal = expression->operand1->value.booleanVal > expression->operand2->value.booleanVal;
-                else if (strcmp(expression->sign->symbol, GTE_SIGN) == 0)
-                    expression->value.booleanVal = expression->operand1->value.booleanVal >= expression->operand2->value.booleanVal;
-            }
-            expression->semanticType = BOOLEAN_SYMBOL;
+            expression->semanticType = INTEGER_SYMBOL;
         }
     }
     break;
@@ -196,13 +185,24 @@ void calculateAttributesForExpression(SyntaxTreeNode* expression)
         calculateAttributesForExpression(expression->operand2);
         int tempType = getNumericType(expression->operand1->semanticType, expression->operand2->semanticType);
 
-        if (tempType != BOOLEAN_SYMBOL)
+        if (tempType != ERROR_SYMBOL)
         {
-            if (strcmp(expression->sign->symbol, LT_SIGN) == 0)
-                expression->value.booleanVal = expression->operand1->value.booleanVal < expression->operand2->value.booleanVal;
-            else if (strcmp(expression->sign->symbol, LTE_SIGN) == 0)
-                expression->value.booleanVal = expression->operand1->value.booleanVal <= expression->operand2->value.booleanVal;
-            expression->semanticType = BOOLEAN_SYMBOL;
+            if (tempType == INTEGER_SYMBOL)
+            {
+                if (strcmp(expression->sign->symbol, LT_SIGN) == 0)
+                    expression->value.integerVal = expression->operand1->value.integerVal < expression->operand2->value.integerVal;
+                else if (strcmp(expression->sign->symbol, LTE_SIGN) == 0)
+                    expression->value.integerVal = expression->operand1->value.integerVal <= expression->operand2->value.integerVal;
+            }
+            else
+            {
+                if (strcmp(expression->sign->symbol, LT_SIGN) == 0)
+                    expression->value.integerVal = expression->operand1->value.floatVal < expression->operand2->value.floatVal;
+                else if (strcmp(expression->sign->symbol, LTE_SIGN) == 0)
+                    expression->value.integerVal = expression->operand1->value.floatVal <= expression->operand2->value.floatVal;
+            }
+
+            expression->semanticType = INTEGER_SYMBOL;
         }
     }
     break;
@@ -225,11 +225,13 @@ void calculateAttributesForExpression(SyntaxTreeNode* expression)
         calculateAttributesForExpression(expression->expression);
         int tempType = (expression->expression->semanticType != ERROR_SYMBOL) ? expression->expression->semanticType : ERROR_SYMBOL;
 
-        if (tempType == BOOLEAN_SYMBOL)
+        if (tempType != ERROR_SYMBOL)
         {
-            expression->value.booleanVal = !expression->expression->value.booleanVal;
-            expression->semanticType = BOOLEAN_SYMBOL;
+            expression->value.integerVal = (tempType == INTEGER_SYMBOL) ? !expression->expression->value.integerVal : !expression->expression->value.floatVal;
+            expression->semanticType = INTEGER_SYMBOL;
         }
+        else
+            expression->semanticType = ERROR_SYMBOL;
     }
     break;
     case IDENTIFIER_NODE:
@@ -268,10 +270,6 @@ void castValues(SyntaxTreeNode *operand1, SyntaxTreeNode* operand2)
         operand2->value.integerVal = operand2->value.floatVal;
     else if (operand1->semanticType == REAL_SYMBOL && operand2->semanticType == INTEGER_SYMBOL)
         operand1->value.integerVal = operand1->value.floatVal;
-    else if (operand1->semanticType == BOOLEAN_SYMBOL && operand2->semanticType == INTEGER_SYMBOL)
-        operand2->value.booleanVal = operand2->value.integerVal;
-    else if (operand1->semanticType == INTEGER_SYMBOL && operand2->semanticType == BOOLEAN_SYMBOL)
-        operand1->value.booleanVal = operand1->value.integerVal;
 }
 
 void semantic_error()
