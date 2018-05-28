@@ -79,6 +79,7 @@ void calculateAttributesForExpression(SyntaxTreeNode* expression)
 
         if (expression->semanticType != ERROR_SYMBOL)
         {
+            castValues(expression->operand1, expression->operand2);
             if (expression->semanticType == INTEGER_SYMBOL)
             {
                 expression->value.integerVal = (strcmp(expression->sign->symbol, ADDITION_SIGN) == 0)
@@ -102,6 +103,7 @@ void calculateAttributesForExpression(SyntaxTreeNode* expression)
 
         if (expression->semanticType != ERROR_SYMBOL)
         {
+            castValues(expression->operand1, expression->operand2);
             if (expression->semanticType == INTEGER_SYMBOL)
             {
                 expression->value.integerVal = (strcmp(expression->sign->symbol, MULT_SIGN) == 0)
@@ -125,6 +127,7 @@ void calculateAttributesForExpression(SyntaxTreeNode* expression)
 
         if (tempType != ERROR_SYMBOL)
         {
+            castValues(expression->operand1, expression->operand2);
             if (expression->semanticType == INTEGER_SYMBOL)
             {
                 expression->value.booleanVal = (strcmp(expression->sign->symbol, EQ_COMPARISON_SIGN) == 0)
@@ -256,27 +259,18 @@ void calculateAttributesForBlock(SyntaxTreeNode* block)
 
         block->semanticType = (!errorExists) ? VOID_SYMBOL : ERROR_SYMBOL;
     }
-
 }
 
 void castValues(SyntaxTreeNode *operand1, SyntaxTreeNode* operand2)
 {
-    if (operand1->semanticType == INTEGER_SYMBOL && operand2->semanticType == INTEGER_SYMBOL)
-        //return INTEGER_SYMBOL;
-    else if (operand1->semanticType == INTEGER_SYMBOL && operand2->semanticType == REAL_SYMBOL)
-        //return INTEGER_SYMBOL;
+    if (operand1->semanticType == INTEGER_SYMBOL && operand2->semanticType == REAL_SYMBOL)
+        operand2->value.integerVal = operand2->value.floatVal;
     else if (operand1->semanticType == REAL_SYMBOL && operand2->semanticType == INTEGER_SYMBOL)
-        //return INTEGER_SYMBOL;
-    else if (operand1->semanticType == REAL_SYMBOL && operand2->semanticType == REAL_SYMBOL)
-        //return REAL_SYMBOL;
-    else if (operand1->semanticType == BOOLEAN_SYMBOL && operand2->semanticType == BOOLEAN_SYMBOL)
-        //return BOOLEAN_SYMBOL;
+        operand1->value.integerVal = operand1->value.floatVal;
     else if (operand1->semanticType == BOOLEAN_SYMBOL && operand2->semanticType == INTEGER_SYMBOL)
-        //return BOOLEAN_SYMBOL;
+        operand2->value.booleanVal = operand2->value.integerVal;
     else if (operand1->semanticType == INTEGER_SYMBOL && operand2->semanticType == BOOLEAN_SYMBOL)
-        //return BOOLEAN_SYMBOL;
-    else
-        //return ERROR_SYMBOL;
+        operand1->value.booleanVal = operand1->value.integerVal;
 }
 
 void semantic_error()

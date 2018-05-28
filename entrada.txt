@@ -1,12 +1,12 @@
+<<<<<<< HEAD
 int a, b, c, f, g;
 
 So3a = 72 + 3.5 + 2;
+=======
+So3a = 72.2 + 3.5 + 2.8;
+>>>>>>> WIP: cast integer and float values
 
-R = 02;
-e = 52;
-l508 = 1;
-Va = 5;
-xg = 3;
+b = 3 > 4 < 7.0;
 
 if (6 * - xg > 6 * 88){
 	float b, c, d, e, f;
