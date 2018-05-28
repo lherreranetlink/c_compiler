@@ -1,20 +1,20 @@
 #ifndef SYMBOL_TABLE_H_INCLUDED
 #define SYMBOL_TABLE_H_INCLUDED
 #include <stdlib.h>
-#include "grammar_attributes.h"
-#include "token.h"
-#include "string.h"
+#include <string.h>
+#include "tree_node.h"
 
 typedef struct SymbolTableNode
 {
     SemanticType type;
-    Token* identifier;
+    SyntaxTreeNode* data;
+
     struct SymbolTableNode* next;
 } SymbolTableNode;
 
-void insertNode(SymbolTableNode** tableHeader, SemanticType type, Token* identifier);
+void insertNode(SymbolTableNode** tableHeader, SyntaxTreeNode* node);
 int existsNode(SymbolTableNode** tableHeader, char* identifier);
-SemanticType getType(SymbolTableNode** tableHeader, char* identifier);
-void updateType(SymbolTableNode** tableHeader, SemanticType type, char* key);
+SyntaxTreeNode* getNode(SymbolTableNode** tableHeader, char* identifier);
+void updateNode(SymbolTableNode** tableHeader, SyntaxTreeNode* node);
 
 #endif // SYMBOL_TABLE_H_INCLUDED

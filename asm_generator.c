@@ -38,11 +38,11 @@ void generateDependencies()
 
 void generateDataSection()
 {
-    fprintf(outFd, ".data\n");
+    /*fprintf(outFd, ".data\n");
     SymbolTableNode* aux;
     for (aux = symbolTableHeader; aux != NULL; aux = aux->next)
         fprintf(outFd, "_%s dword 0\n", aux->identifier->symbol);
-    fprintf(outFd, "\n");
+    fprintf(outFd, "\n");*/
 }
 
 void generateStatementCode(SyntaxTreeNode* statement)
