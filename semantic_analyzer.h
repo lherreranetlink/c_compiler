@@ -1,6 +1,7 @@
 #ifndef SEMANTIC_ANALYZER_H_INCLUDED
 #define SEMANTIC_ANALYZER_H_INCLUDED
 #include <stdio.h>
+#include <string.h>
 #include "token.h"
 #include "parser.h"
 #include "symbol_table.h"
@@ -11,6 +12,7 @@ void analyzeSemantics(SyntaxTreeNode** treeRoot, SymbolTableNode** symbolTableHe
 void calculateAttributesForStatement(SyntaxTreeNode* statement);
 void calculateAttributesForExpression(SyntaxTreeNode* expression);
 void calculateAttributesForBlock(SyntaxTreeNode* block);
+void castValues(SyntaxTreeNode *operand1, SyntaxTreeNode* operand2);
 void semantic_error();
 
 #endif // SEMANTIC_ANALYZER_H_INCLUDED

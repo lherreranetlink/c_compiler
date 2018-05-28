@@ -11,8 +11,9 @@ typedef struct SyntaxTreeNode
     union
     {
         int integerVal;
+        int booleanVal;
         float floatVal;
-    }value;
+    } value;
 
     union
     {
