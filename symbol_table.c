@@ -1,10 +1,9 @@
 #include "symbol_table.h"
 
-void insertNode(SymbolTableNode** tableHeader, SemanticType type, Token* identifier)
+void insertNode(SymbolTableNode** tableHeader, SyntaxTreeNode* node)
 {
     SymbolTableNode* symbol = (SymbolTableNode*) malloc(sizeof(SymbolTableNode));
-    symbol->identifier = identifier;
-    symbol->type = type;
+    symbol->data = node;
     symbol->next= NULL;
 
     if (*tableHeader != NULL)
@@ -24,30 +23,30 @@ int existsNode(SymbolTableNode** tableHeader, char* identifier)
     SymbolTableNode* aux;
 
     for (aux = *tableHeader; aux != NULL; aux = aux->next)
-        if (strcmp(identifier, aux->identifier->symbol) == 0)
+        if (strcmp(identifier, aux->data->identifier->symbol) == 0)
             return 1;
 
     return 0;
 }
 
-SemanticType getType(SymbolTableNode** tableHeader, char* identifier)
+SyntaxTreeNode* getNode(SymbolTableNode** tableHeader, char* identifier)
 {
     SymbolTableNode* aux;
 
     for (aux = *tableHeader; aux != NULL; aux = aux->next)
-        if (strcmp(identifier, aux->identifier->symbol) == 0)
-            return aux->type;
+        if (strcmp(identifier, aux->data->identifier->symbol) == 0)
+            return aux->data;
 
-    return ERROR_SYMBOL;
+    return NULL;
 }
 
-void updateType(SymbolTableNode** tableHeader, SemanticType type, char* key)
+void updateNode(SymbolTableNode** tableHeader, SyntaxTreeNode* node)
 {
     SymbolTableNode* aux;
     for (aux = *tableHeader; aux != NULL; aux = aux->next)
-        if (strcmp(key, aux->identifier->symbol) == 0)
+        if (strcmp(node->identifier->symbol, aux->data->identifier->symbol) == 0)
         {
-            aux->type = type;
+            aux->data = node;
             break;
         }
 }

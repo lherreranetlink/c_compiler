@@ -152,6 +152,7 @@ void calculateAttributesForExpression(SyntaxTreeNode* expression)
 
         if (tempType != ERROR_SYMBOL)
         {
+            castValues(expression->operand1, expression->operand2);
             if (tempType == INTEGER_SYMBOL)
             {
                 if (strcmp(expression->sign->symbol, LT_SIGN) == 0)
