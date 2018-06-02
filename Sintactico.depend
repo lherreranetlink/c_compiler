@@ -233,3 +233,34 @@
 	"token.h"
 	"grammar_attributes.h"
 
+1527966556 source:/home/leonardoho/Escritorio/c_compiler/lex.c
+	"lex.h"
+
+1527966556 /home/leonardoho/Escritorio/c_compiler/lex.h
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"token.h"
+
+1527966556 /home/leonardoho/Escritorio/c_compiler/token.h
+
+1527966556 source:/home/leonardoho/Escritorio/c_compiler/parser.c
+	"parser.h"
+
+1527966556 /home/leonardoho/Escritorio/c_compiler/parser.h
+	<stdio.h>
+	<stdlib.h>
+	"rules.h"
+	"tree_node.h"
+	"token.h"
+	"lex.h"
+
+1527966556 /home/leonardoho/Escritorio/c_compiler/rules.h
+
+1527966556 /home/leonardoho/Escritorio/c_compiler/tree_node.h
+	"token.h"
+	"grammar_attributes.h"
+
+1527966556 /home/leonardoho/Escritorio/c_compiler/grammar_attributes.h
+
