@@ -10,5 +10,7 @@ void printStatement(SyntaxTreeNode* statement);
 void printExpression(SyntaxTreeNode* expression);
 void printBlock(SyntaxTreeNode* block);
 void printRelationalExpression(SyntaxTreeNode* relationalExpression);
+void printVarDeclaration(SyntaxTreeNode* varDecl);
+void printVarList(SyntaxTreeNode* varList);
 
 #endif // TREEPRINTER_H_INCLUDED

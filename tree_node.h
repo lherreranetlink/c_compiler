@@ -21,7 +21,7 @@ typedef struct SyntaxTreeNode
     struct SyntaxTreeNode* operand2;
     struct SyntaxTreeNode* varList;
     Token* dataType;
-    Token* identfier;
+    Token* identifier;
     Token* integer;
     Token* realNumber;
     Token* sign;

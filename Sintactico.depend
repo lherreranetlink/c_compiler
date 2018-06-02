@@ -245,7 +245,7 @@
 
 1527966556 /home/leonardoho/Escritorio/c_compiler/token.h
 
-1527966556 source:/home/leonardoho/Escritorio/c_compiler/parser.c
+1527972936 source:/home/leonardoho/Escritorio/c_compiler/parser.c
 	"parser.h"
 
 1527968968 /home/leonardoho/Escritorio/c_compiler/parser.h
@@ -258,13 +258,13 @@
 
 1527968831 /home/leonardoho/Escritorio/c_compiler/rules.h
 
-1527968416 /home/leonardoho/Escritorio/c_compiler/tree_node.h
+1527971115 /home/leonardoho/Escritorio/c_compiler/tree_node.h
 	"token.h"
 	"grammar_attributes.h"
 
 1527966556 /home/leonardoho/Escritorio/c_compiler/grammar_attributes.h
 
-1527966556 source:/home/leonardoho/Escritorio/c_compiler/asm_generator.c
+1527971132 source:/home/leonardoho/Escritorio/c_compiler/asm_generator.c
 	"asm_generator.h"
 
 1527966556 /home/leonardoho/Escritorio/c_compiler/asm_generator.h
@@ -286,13 +286,13 @@
 	"token.h"
 	"string.h"
 
-1527966556 source:/home/leonardoho/Escritorio/c_compiler/semantic_analyzer.c
+1527971189 source:/home/leonardoho/Escritorio/c_compiler/semantic_analyzer.c
 	"semantic_analyzer.h"
 
 1527966556 source:/home/leonardoho/Escritorio/c_compiler/symbol_table.c
 	"symbol_table.h"
 
-1527966556 source:/home/leonardoho/Escritorio/c_compiler/treeprinter.c
+1527971135 source:/home/leonardoho/Escritorio/c_compiler/treeprinter.c
 	"treeprinter.h"
 
 1527966556 /home/leonardoho/Escritorio/c_compiler/treeprinter.h
