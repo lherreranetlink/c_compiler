@@ -57,10 +57,15 @@ void printStatement(SyntaxTreeNode* statement)
     case ASSIGNMENT_STATEMENT_NODE:
         fprintf(outFd, "<ASIGNACION>\n");
         fprintf(outFd, "<ID>");
-        fprintf(outFd, "%s", statement->identfier->symbol);
+        fprintf(outFd, "%s", statement->identifier->symbol);
         fprintf(outFd, "</ID>\n");
         printExpression(statement->expression);
         fprintf(outFd, "</ASIGNACION>\n");
+        break;
+    case VAR_DECLARATION_STATEMENT_NODE:
+        fprintf(outFd, "<VARDECL>\n");
+        printVarDeclaration(statement);
+        fprintf(outFd, "</VARDECL>\n");
     }
 }
 
@@ -112,7 +117,7 @@ void printExpression(SyntaxTreeNode* expression)
         break;
     case IDENTIFIER_NODE:
         fprintf(outFd, "<ID>");
-        fprintf(outFd, "%s", expression->identfier->symbol);
+        fprintf(outFd, "%s", expression->identifier->symbol);
         fprintf(outFd, "</ID>\n");
         break;
     case INTEGER_NODE:
@@ -150,4 +155,16 @@ void printBlock(SyntaxTreeNode* block)
     SyntaxTreeNode* aux;
     for (aux = block; aux != NULL; aux = aux->next)
         printStatement(aux);
+}
+
+void printVarDeclaration(SyntaxTreeNode* varDecl)
+{
+    fprintf(stdout, "<IDENTIFICADOR>\n");
+    fprintf(stdout, "%s", varDecl->identifier->symbol);
+    fprintf(stdout, "</IDENTIFICADOR>\n");
+}
+
+void printVarList(SyntaxTreeNode* varList)
+{
+
 }

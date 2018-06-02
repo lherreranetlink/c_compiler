@@ -181,7 +181,7 @@ SyntaxTreeNode* factor()
         break;
     case IDENTIFIER:
         temp->ruleType = IDENTIFIER_NODE;
-        temp->identfier = currentToken;
+        temp->identifier = currentToken;
         match(IDENTIFIER);
         break;
     default:
@@ -271,7 +271,7 @@ SyntaxTreeNode* assignment()
     SyntaxTreeNode* assignment = (SyntaxTreeNode*) malloc(sizeof(SyntaxTreeNode));
     assignment->ruleType = ASSIGNMENT_STATEMENT_NODE;
 
-    assignment->identfier = currentToken;
+    assignment->identifier = currentToken;
 
     match(IDENTIFIER);
     match(ASSIGNMENT_OPERATOR);
@@ -292,6 +292,7 @@ SyntaxTreeNode* varDeclaration()
 
     match(DATA_TYPE);
     varDeclaration->varList = varList();
+    match(SEMICOLON);
 
     return varDeclaration;
 }
@@ -302,16 +303,21 @@ SyntaxTreeNode* varList()
     aux = varList;
     aux->next = NULL;
 
-    aux->identfier = currentToken;
+    aux->identifier = currentToken;
     match(IDENTIFIER);
 
-    while(currentToken->type == IDENTIFIER)
+    while(currentToken->type == COMA)
     {
+        match(COMA);
+
         SyntaxTreeNode* var = (SyntaxTreeNode*) malloc(sizeof(SyntaxTreeNode));
-        var->identfier = currentToken;
+
+        var->identifier = currentToken;
+        var->next = NULL;
+        match(IDENTIFIER);
+
         aux->next = var;
         aux = aux->next;
-        aux->next = NULL;
     }
 
     return varList;

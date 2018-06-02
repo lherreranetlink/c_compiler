@@ -86,7 +86,7 @@ void generateStatementCode(SyntaxTreeNode* statement)
         break;
     case ASSIGNMENT_STATEMENT_NODE:
         generateExpressionCode(statement->expression);
-        fprintf(outFd, "pop _%s\n", statement->identfier->symbol);
+        fprintf(outFd, "pop _%s\n", statement->identifier->symbol);
     }
 }
 
@@ -140,7 +140,7 @@ void generateExpressionCode(SyntaxTreeNode* expression)
             fprintf(outFd, "pop ebx\npop eax\nor eax, ebx\npush eax\n");
         break;
     case IDENTIFIER_NODE:
-        fprintf(outFd, "push _%s\n", expression->identfier->symbol);
+        fprintf(outFd, "push _%s\n", expression->identifier->symbol);
         break;
     case INTEGER_NODE:
         fprintf(outFd, "push %s\n", expression->integer->symbol);
