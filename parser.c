@@ -58,6 +58,9 @@ SyntaxTreeNode* singleStatement()
     case IDENTIFIER:
         statement = assignment();
         break;
+    case DATA_TYPE:
+        statement = varDeclaration();
+        break;
     default:
         error();
     }
@@ -154,12 +157,12 @@ SyntaxTreeNode* factor()
         match(NEGATION_OPERATOR);
         temp->ruleType = NEGATION_OPERATION_NODE;
         temp->expression = factor();
-    break;
+        break;
     case LEFT_PARENTHESIS:
         match(LEFT_PARENTHESIS);
         temp = expression();
         match(RIGHT_PARENTHESIS);
-    break;
+        break;
     case ADD_OPERATOR:
         temp->ruleType = UNARY_OPERATION_NODE;
         temp->sign = currentToken;
@@ -278,6 +281,40 @@ SyntaxTreeNode* assignment()
     match(SEMICOLON);
 
     return assignment;
+}
+
+SyntaxTreeNode* varDeclaration()
+{
+    SyntaxTreeNode* varDeclaration = (SyntaxTreeNode*) malloc(sizeof(SyntaxTreeNode));
+    varDeclaration->ruleType = VAR_DECLARATION_STATEMENT_NODE;
+
+    varDeclaration->dataType = currentToken;
+
+    match(DATA_TYPE);
+    varDeclaration->varList = varList();
+
+    return varDeclaration;
+}
+
+SyntaxTreeNode* varList()
+{
+    SyntaxTreeNode* varList = (SyntaxTreeNode*) malloc(sizeof(SyntaxTreeNode)), *aux;
+    aux = varList;
+    aux->next = NULL;
+
+    aux->identfier = currentToken;
+    match(IDENTIFIER);
+
+    while(currentToken->type == IDENTIFIER)
+    {
+        SyntaxTreeNode* var = (SyntaxTreeNode*) malloc(sizeof(SyntaxTreeNode));
+        var->identfier = currentToken;
+        aux->next = var;
+        aux = aux->next;
+        aux->next = NULL;
+    }
+
+    return varList;
 }
 
 void match(TokenType tokenType)

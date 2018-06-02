@@ -19,6 +19,8 @@ typedef struct SyntaxTreeNode
     struct SyntaxTreeNode* blockStatements;
     struct SyntaxTreeNode* operand1;
     struct SyntaxTreeNode* operand2;
+    struct SyntaxTreeNode* varList;
+    Token* dataType;
     Token* identfier;
     Token* integer;
     Token* realNumber;

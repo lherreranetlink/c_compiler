@@ -21,6 +21,8 @@ SyntaxTreeNode* elsePart();
 SyntaxTreeNode* block();
 SyntaxTreeNode* printableStatement();
 SyntaxTreeNode* assignment();
+SyntaxTreeNode* varDeclaration();
+SyntaxTreeNode* varList();
 void match(TokenType type);
 void error();
 
