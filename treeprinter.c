@@ -4,7 +4,7 @@ static FILE* outFd;
 
 void printSyntaxTree(SyntaxTreeNode* initial)
 {
-    outFd = fopen("salida.txt", "w");
+    outFd = fopen("salida.xml", "w");
     if (initial != NULL)
     {
         fprintf(outFd, "<PROGRAMA>\n");
@@ -159,12 +159,21 @@ void printBlock(SyntaxTreeNode* block)
 
 void printVarDeclaration(SyntaxTreeNode* varDecl)
 {
-    fprintf(stdout, "<IDENTIFICADOR>\n");
-    fprintf(stdout, "%s", varDecl->identifier->symbol);
-    fprintf(stdout, "</IDENTIFICADOR>\n");
+    fprintf(outFd, "<DATATYPE>\n");
+    fprintf(outFd, "%s", varDecl->dataType->symbol);
+    fprintf(outFd, "</DATATYPE>\n");
+    fprintf(outFd, "<VARLIST>\n");
+    printVarList(varDecl->varList);
+    fprintf(outFd, "</VARLIST>\n");
 }
 
 void printVarList(SyntaxTreeNode* varList)
 {
-
+    SyntaxTreeNode* aux;
+    for (aux = varList; aux != NULL; aux = aux->next)
+    {
+        fprintf(outFd, "<IDENTIFIER>\n");
+        fprintf(outFd, "%s", aux->identifier->symbol);
+        fprintf(outFd, "</IDENTIFIER>\n");
+    }
 }

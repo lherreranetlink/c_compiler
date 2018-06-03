@@ -8,6 +8,7 @@ l508 = 1;
 Va = 5;
 xg = 3;
 if (6 * - xg > 6 * 88){
+	float b, c, d, e, f;
 	Rq = 9;
 
 	Jj = 3;
