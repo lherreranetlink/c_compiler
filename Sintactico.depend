@@ -292,20 +292,21 @@
 1527966556 source:/home/leonardoho/Escritorio/c_compiler/symbol_table.c
 	"symbol_table.h"
 
-1527971135 source:/home/leonardoho/Escritorio/c_compiler/treeprinter.c
+1528041323 source:/home/leonardoho/Escritorio/c_compiler/treeprinter.c
 	"treeprinter.h"
 
-1527966556 /home/leonardoho/Escritorio/c_compiler/treeprinter.h
+1527973839 /home/leonardoho/Escritorio/c_compiler/treeprinter.h
 	"rules.h"
 	"tree_node.h"
 	<stdio.h>
 	<string.h>
 
-1527967934 source:/home/leonardoho/Escritorio/c_compiler/main.c
+1528041226 source:/home/leonardoho/Escritorio/c_compiler/main.c
 	<stdio.h>
 	<stdlib.h>
 	"parser.h"
 	"symbol_table.h"
 	"semantic_analyzer.h"
 	"asm_generator.h"
+	"treeprinter.h"
 
