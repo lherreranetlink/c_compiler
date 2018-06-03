@@ -56,9 +56,9 @@ void calculateAttributesForStatement(SyntaxTreeNode* statement)
         if (statement->expression->semanticType != ERROR_SYMBOL)
         {
             if (existsNode(&symbolTableHeader, statement->identifier->symbol))
-                updateType(&symbolTableHeader, statement->expression->semanticType, statement->identifier->symbol);
+                updateNode(&symbolTableHeader, statement);
             else
-                insertNode(&symbolTableHeader, statement->expression->semanticType, statement->identifier);
+                insertNode(&symbolTableHeader, statement);
             statement->semanticType = VOID_SYMBOL;
         }
         else
@@ -235,7 +235,7 @@ void calculateAttributesForExpression(SyntaxTreeNode* expression)
     }
     break;
     case IDENTIFIER_NODE:
-        expression->semanticType = (existsNode(&symbolTableHeader, expression->identifier->symbol)) ? getType(&symbolTableHeader, expression->identifier->symbol) : ERROR_SYMBOL;
+        //expression->semanticType = (existsNode(&symbolTableHeader, expression->identifier->symbol)) ? getType(&symbolTableHeader, expression->identifier->symbol) : ERROR_SYMBOL;
         break;
     case INTEGER_NODE:
         expression->semanticType = INTEGER_SYMBOL;

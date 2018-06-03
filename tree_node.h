@@ -14,12 +14,6 @@ typedef struct SyntaxTreeNode
         float floatVal;
     } value;
 
-    union
-    {
-        int intVal;
-        float floatVal;
-    }value;
-
     struct SyntaxTreeNode* expression;
     struct SyntaxTreeNode* ifPart;
     struct SyntaxTreeNode* elsePart;
