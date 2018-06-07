@@ -8,11 +8,6 @@ typedef struct SyntaxTreeNode
 {
     RuleType ruleType;
     SemanticType semanticType;
-    union
-    {
-        int integerVal;
-        float floatVal;
-    } value;
 
     struct SyntaxTreeNode* expression;
     struct SyntaxTreeNode* ifPart;

@@ -12,7 +12,7 @@ void analyzeSemantics(SyntaxTreeNode** treeRoot, SymbolTableNode** symbolTableHe
 void calculateAttributesForStatement(SyntaxTreeNode* statement);
 void calculateAttributesForExpression(SyntaxTreeNode* expression);
 void calculateAttributesForBlock(SyntaxTreeNode* block);
-void castValues(SyntaxTreeNode *operand1, SyntaxTreeNode* operand2);
-void semantic_error();
+SemanticType getOperationDataType(SemanticType type1, SemanticType type2);
+void semantic_error(char* msg);
 
 #endif // SEMANTIC_ANALYZER_H_INCLUDED
