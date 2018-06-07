@@ -1,55 +1,17 @@
-int a, b, c, f, g;
+int a, b, c, d, e;
 
-So3a = 72 + 3.5 + 2;
+a = 5 > 5 * (2 + 2);
 
-b = 3 > 4 < 7.0;
+b = 6 * 5 - 2;
 
-if (6 * - xg > 6 * 88){
-	float b, c, d, e, f;
-	Rq = 9;
-
-	Jj = 3;
-
-
-	if (Rq < Jj){
-		B70K = (Jj - Rq) / 10 + 1;
-
-		print (Rq+2);
-
-		Rq = Rq + B70K - 4;
-
-		Y8 = 12;
-	}
-
-	if (R)
-		while (R)
-			if (Va) {
-				while (Rq < Jj){
-					B70K = (Jj - Rq) / 10 + 1;
-
-					print (Rq+2);
-
-					Rq = Rq + B70K - 4;
-
-					Y8 = 12;
-
-				}				
-			}
-	else
-		if (23)
-			if (R)
-				while(1)
-					print(R);
-
-	x = 43 - 10 * (R + l508);
-
-
-	print (38 + Y8);
+while (c > 0)
+{
+	if (a > b) {
+		d = 45 + 5;
+	} else {
+		e = 86;
+		c = 56.77;
+	}	
 }
-else
-	wg7 = 98;
 
-print (e);
-So3a = 7.2 + 3.5 + 2.8;
-
-b = 3 > 4 < So3a;
+r = f * h;

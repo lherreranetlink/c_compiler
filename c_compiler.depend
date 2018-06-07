@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1528043087 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/grammar_attributes.c
+1528339063 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/grammar_attributes.c
 	"grammar_attributes.h"
 
-1528043087 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/grammar_attributes.h
+1528339063 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/grammar_attributes.h
 	<stdio.h>
 
 1526792553 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/lex.c
@@ -15,9 +15,9 @@
 	<string.h>
 	"token.h"
 
-1528042725 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/token.h
+1528339063 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/token.h
 
-1528042858 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/asm_generator.c
+1528339063 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/asm_generator.c
 	"asm_generator.h"
 
 1527357185 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/asm_generator.h
@@ -25,7 +25,7 @@
 	<string.h>
 	"semantic_analyzer.h"
 
-1528042725 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/semantic_analyzer.h
+1528346409 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/semantic_analyzer.h
 	<stdio.h>
 	<string.h>
 	"token.h"
@@ -44,17 +44,18 @@
 
 1528042283 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/rules.h
 
-1528044646 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/tree_node.h
+1528341018 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/tree_node.h
 	"token.h"
 	"rules.h"
 	"grammar_attributes.h"
 
-1528045074 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/symbol_table.h
+1528340708 /home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/symbol_table.h
 	<stdlib.h>
-	<string.h>
-	"tree_node.h"
+	"grammar_attributes.h"
+	"token.h"
+	"string.h"
 
-1528042571 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/main.c
+1528345197 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/main.c
 	<stdio.h>
 	<stdlib.h>
 	"parser.h"
@@ -65,7 +66,7 @@
 1528042858 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/parser.c
 	"parser.h"
 
-1528042857 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/symbol_table.c
+1528347000 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/symbol_table.c
 	"symbol_table.h"
 
 1528042857 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/treeprinter.c
@@ -76,4 +77,7 @@
 	"tree_node.h"
 	<stdio.h>
 	<string.h>
+
+1528347828 source:/home/leonardoho/Escritorio/CUCEI/Octavo_Semestre/Carlos_Franco/Proyecto/c_compiler/semantic_analyzer.c
+	"semantic_analyzer.h"
 
