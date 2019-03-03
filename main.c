@@ -14,9 +14,11 @@ int main()
         fprintf(stderr, "%s no such file or directory\n", filename);
         exit(1);
     }
-    /*SyntaxTreeNode* syntaxTree = */parse(fd);
-    /*SymbolTableNode* symbolTable;
+
+    SyntaxTreeNode* syntaxTree = parse(fd);
+    SymbolTableNode* symbolTable;
     analyzeSemantics(&syntaxTree, &symbolTable);
-    generate_asm(&syntaxTree, &symbolTable);*/
+    generate_asm(&syntaxTree, &symbolTable);
+
     return 0;
 }

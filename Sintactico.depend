@@ -310,3 +310,79 @@
 	"asm_generator.h"
 	"treeprinter.h"
 
+1551655119 source:/home/lherrera/Desktop/c_compiler/asm_generator.c
+	"asm_generator.h"
+
+1551655119 /home/lherrera/Desktop/c_compiler/asm_generator.h
+	<stdio.h>
+	<string.h>
+	"semantic_analyzer.h"
+
+1551655119 /home/lherrera/Desktop/c_compiler/semantic_analyzer.h
+	<stdio.h>
+	"token.h"
+	"parser.h"
+	"symbol_table.h"
+	"grammar_attributes.h"
+	"semantic_analyzer.h"
+
+1551655119 /home/lherrera/Desktop/c_compiler/token.h
+
+1551655119 /home/lherrera/Desktop/c_compiler/parser.h
+	<stdio.h>
+	<stdlib.h>
+	"rules.h"
+	"tree_node.h"
+	"token.h"
+	"lex.h"
+
+1551655119 /home/lherrera/Desktop/c_compiler/rules.h
+
+1551655119 /home/lherrera/Desktop/c_compiler/tree_node.h
+	"token.h"
+	"grammar_attributes.h"
+
+1551655119 /home/lherrera/Desktop/c_compiler/grammar_attributes.h
+
+1551655119 /home/lherrera/Desktop/c_compiler/lex.h
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"token.h"
+
+1551655119 /home/lherrera/Desktop/c_compiler/symbol_table.h
+	<stdlib.h>
+	"grammar_attributes.h"
+	"token.h"
+	"string.h"
+
+1551655119 source:/home/lherrera/Desktop/c_compiler/lex.c
+	"lex.h"
+
+1551656527 source:/home/lherrera/Desktop/c_compiler/main.c
+	<stdio.h>
+	<stdlib.h>
+	"parser.h"
+	"symbol_table.h"
+	"semantic_analyzer.h"
+	"asm_generator.h"
+
+1551655119 source:/home/lherrera/Desktop/c_compiler/parser.c
+	"parser.h"
+
+1551655119 source:/home/lherrera/Desktop/c_compiler/semantic_analyzer.c
+	"semantic_analyzer.h"
+
+1551655119 source:/home/lherrera/Desktop/c_compiler/symbol_table.c
+	"symbol_table.h"
+
+1551655119 source:/home/lherrera/Desktop/c_compiler/treeprinter.c
+	"treeprinter.h"
+
+1551655119 /home/lherrera/Desktop/c_compiler/treeprinter.h
+	"rules.h"
+	"tree_node.h"
+	<stdio.h>
+	<string.h>
+
