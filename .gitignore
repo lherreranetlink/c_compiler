@@ -1,6 +1,5 @@
 *.depend
 *.layout
-*.cbp
 /bin
 /obj
 entrada.txt
