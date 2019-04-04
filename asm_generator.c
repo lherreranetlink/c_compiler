@@ -14,6 +14,7 @@ void generate_asm(SyntaxTreeNode** treeRoot, SymbolTableNode** symbolTable)
         generateDataSection();
         fprintf(outFd, ".code\n");
         fprintf(outFd, "begin:\n");
+        fprintf(outFd, "begiiin:\n");
         SyntaxTreeNode* aux;
         for (aux = *treeRoot; aux != NULL; aux = aux->next)
             generateStatementCode(aux);
